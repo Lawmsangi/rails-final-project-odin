@@ -1,0 +1,8 @@
+<h1>Posts</h1>
+<div>
+    <h1><%= @post.title %></h1>
+    <p><%= @post.body %></p>
+    <p><%= @post.likes_counter %> Likes</p>
+    <p><%= @post.comments_counter %> Comments</p>
+    <p><%= link_to 'Back', user_posts_path(@user) %></p>
+</div>

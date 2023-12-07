@@ -1,0 +1,18 @@
+<h1>User</h1>
+<%= image_tag @user.photo, alt: 'User Photo' %>
+<p>Name: <%= @user.name %></p>
+<p>Bio: <%= @user.bio %></p>
+<p>Created at: <%= @user.created_at %></p>
+
+<ul>
+    <% @posts.each do |post| %>
+        <li>
+            <h2><%= link_to post.title, user_post_path(@user,post) %></h2>
+            <p><%= post.body %></p>
+        </li>
+    <% end %>
+</ul>
+
+<p><%= link_to 'See all posts', user_posts_path(@user) %></p>
+
+<%= link_to 'Back', users_path %>
