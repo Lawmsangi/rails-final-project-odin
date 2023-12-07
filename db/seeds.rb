@@ -1,9 +1,32 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+first_user = User.create(name: 'Acacia', photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', bio: 'I am a software engineer and I love to code!')
+second_user = User.create(name: 'Dudu', photo: 'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', bio: 'I am a fullstack web developer and I love to code!')
+
+first_user.posts.create(title: 'My first post', body: 'This is my first post on this social media app!')
+first_user.posts.create(title: 'My second post', body: 'This is my second post on this social media app!')
+first_user.posts.create(title: 'My third post', body: 'This is my third post on this social media app!')
+first_user.posts.create(title: 'My fourth post', body: 'This is my fourth post on this social media app!')
+first_user.posts.create(title: 'My fifth post', body: 'This is my fifth post on this social media app!')
+second_user.posts.create(title: 'My first post', body: 'This is my first post on this social media app!')
+second_user.posts.create(title: 'My second post', body: 'This is my second post on this social media app!')
+second_user.posts.create(title: 'My third post', body: 'This is my third post on this social media app!')
+second_user.posts.create(title: 'My fourth post', body: 'This is my fourth post on this social media app!')
+second_user.posts.create(title: 'My fifth post', body: 'This is my fifth post on this social media app!')
+
+Comment.create!(post_id: 1, user_id: 1, body: 'Hi Tom!' )
+Comment.create!(post_id: 1, user_id: 1, body: 'Hi John!' )
+Comment.create!(post_id: 1, user_id: 1, body: 'Hi Jakie!' )
+Comment.create!(post_id: 1, user_id: 2, body: 'Hi Chan!' )
+Comment.create!(post_id: 1, user_id: 2, body: 'Hi Nick!' )
+Comment.create!(post_id: 1, user_id: 2, body: 'Hi Will!' )
+Comment.create!(post_id: 2, user_id: 1, body: 'Hi Norton!' )
+Comment.create!(post_id: 3, user_id: 2, body: 'Hi Pikachu!' )
+Comment.create!(post_id: 4, user_id: 1, body: 'Hi Bruce!' )
+Comment.create!(post_id: 5, user_id: 2, body: 'Hi Messi!' )
+
+Like.create!(post_id: 1, user_id: 1)
+Like.create!(post_id: 2, user_id: 1)
+Like.create!(post_id: 3, user_id: 1)
+Like.create!(post_id: 4, user_id: 2)
+Like.create!(post_id: 5, user_id: 2)
+Like.create!(post_id: 1, user_id: 2)
+Like.create!(post_id: 1, user_id: 2)
